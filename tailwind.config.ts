@@ -1,9 +1,8 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  // یکی از این دو گزینه:
-  darkMode: 'class',                 // ✅ رایج‌ترین
-  // darkMode: ['class', '.dark'],   // ✅ اگر سلکتور سفارشی استفاده می‌کنی
+
+  darkMode: 'class',                 
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
