@@ -85,27 +85,6 @@
   text-align: center;
   min-width: 0;
 }
-.button__f3ECl:global(.__wab_instance):global(.__wab_instance) {
-  max-width: 100%;
-  margin: 20px 0px 0px;
-}
-@media (min-width: 0px) and (max-width: 768px) {
-  .button__f3ECl:global(.__wab_instance):global(.__wab_instance) {
-    display: none;
-  }
-}
-.svg__eReEp {
-  position: relative;
-  height: 1em;
-}
-.text__twQxM {
-  white-space: pre;
-  font-family: "IRANSansX";
-}
-.svg___01Gc4 {
-  position: relative;
-  height: 1em;
-}
 .apiRequest:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -129,25 +108,6 @@
   border-width: var(--token-6vg8Lh9hkzkU);
   border-style: dotted;
 }
-.text__oo2Pw {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-family: "IRANSansX";
-  text-align: right;
-  margin-top: 20px;
-  outline-style: dotted;
-  outline-color: #a09d9d;
-  outline-width: thin;
-  min-width: 0;
-  padding: 10px;
-}
-@media (min-width: 0px) and (max-width: 768px) {
-  .text__oo2Pw {
-    display: none;
-  }
-}
 .freeBox___12JN3 {
   display: flex;
   flex-direction: column;
@@ -167,46 +127,6 @@
   font-size: var(--token-7z5Kw5B89TZR);
   text-align: center;
   min-width: 0;
-}
-.button___1N3Vc:global(.__wab_instance):global(.__wab_instance) {
-  max-width: 100%;
-  margin: 20px 0px 0px;
-}
-@media (min-width: 0px) and (max-width: 768px) {
-  .button___1N3Vc:global(.__wab_instance):global(.__wab_instance) {
-    display: none;
-  }
-}
-.svg__aGqZg {
-  position: relative;
-  height: 1em;
-}
-.text__a1Kmx {
-  white-space: pre;
-  font-family: "IRANSansX";
-}
-.svg___5ZcIb {
-  position: relative;
-  height: 1em;
-}
-.text___5G2ES {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-family: "IRANSansX";
-  text-align: right;
-  margin-top: 20px;
-  outline-style: dotted;
-  outline-color: #a09d9d;
-  outline-width: thin;
-  min-width: 0;
-  padding: 10px;
-}
-@media (min-width: 0px) and (max-width: 768px) {
-  .text___5G2ES {
-    display: none;
-  }
 }
 .freeBox__j7Es {
   display: flex;
@@ -228,65 +148,6 @@
   text-align: center;
   min-width: 0;
 }
-.button__iBtPo:global(.__wab_instance):global(.__wab_instance) {
-  max-width: 100%;
-  margin: 20px 0px 0px;
-}
-@media (min-width: 0px) and (max-width: 768px) {
-  .button__iBtPo:global(.__wab_instance):global(.__wab_instance) {
-    display: none;
-  }
-}
-.svg__zWdHi {
-  position: relative;
-  height: 1em;
-}
-.text__tpd9M {
-  white-space: pre;
-  font-family: "IRANSansX";
-}
-.svg__mwkhu {
-  position: relative;
-  height: 1em;
-}
-.button__xg7L:global(.__wab_instance):global(.__wab_instance) {
-  max-width: 100%;
-}
-@media (min-width: 0px) and (max-width: 768px) {
-  .button__xg7L:global(.__wab_instance):global(.__wab_instance) {
-    display: none;
-  }
-}
-.svg__nxzOg {
-  position: relative;
-  height: 1em;
-}
-.text__tlIc {
-  white-space: pre;
-}
-.svg__gwAxo {
-  position: relative;
-  height: 1em;
-}
-.text__pFdly {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-family: "IRANSansX";
-  text-align: right;
-  margin-top: 20px;
-  outline-style: dotted;
-  outline-color: #a09d9d;
-  outline-width: thin;
-  min-width: 0;
-  padding: 10px;
-}
-@media (min-width: 0px) and (max-width: 768px) {
-  .text__pFdly {
-    display: none;
-  }
-}
 .freeBox__pHhzZ {
   display: flex;
   flex-direction: column;
@@ -307,46 +168,6 @@
   text-align: center;
   min-width: 0;
 }
-.button__cmDkg:global(.__wab_instance):global(.__wab_instance) {
-  max-width: 100%;
-  margin: 20px 0px 0px;
-}
-@media (min-width: 0px) and (max-width: 768px) {
-  .button__cmDkg:global(.__wab_instance):global(.__wab_instance) {
-    display: none;
-  }
-}
-.svg__v2SF {
-  position: relative;
-  height: 1em;
-}
-.text___9Tr9 {
-  white-space: pre;
-  font-family: "IRANSansX";
-}
-.svg__q77Pp {
-  position: relative;
-  height: 1em;
-}
-.text__jX19 {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-family: "IRANSansX";
-  text-align: right;
-  margin-top: 20px;
-  outline-style: dotted;
-  outline-color: #a09d9d;
-  outline-width: thin;
-  min-width: 0;
-  padding: 10px;
-}
-@media (min-width: 0px) and (max-width: 768px) {
-  .text__jX19 {
-    display: none;
-  }
-}
 .freeBox__azxiq {
   display: flex;
   flex-direction: column;
@@ -366,46 +187,6 @@
   font-size: var(--token-7z5Kw5B89TZR);
   text-align: center;
   min-width: 0;
-}
-.button__gJj6U:global(.__wab_instance):global(.__wab_instance) {
-  max-width: 100%;
-  margin: 20px 0px 0px;
-}
-@media (min-width: 0px) and (max-width: 768px) {
-  .button__gJj6U:global(.__wab_instance):global(.__wab_instance) {
-    display: none;
-  }
-}
-.svg___4Smtf {
-  position: relative;
-  height: 1em;
-}
-.text__vQh7 {
-  white-space: pre;
-  font-family: "IRANSansX";
-}
-.svg__r2HoO {
-  position: relative;
-  height: 1em;
-}
-.text__pLz3 {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-family: "IRANSansX";
-  text-align: right;
-  margin-top: 20px;
-  outline-style: dotted;
-  outline-color: #a09d9d;
-  outline-width: thin;
-  min-width: 0;
-  padding: 10px;
-}
-@media (min-width: 0px) and (max-width: 768px) {
-  .text__pLz3 {
-    display: none;
-  }
 }
 .button__arhMh:global(.__wab_instance):global(.__wab_instance) {
   max-width: 100%;

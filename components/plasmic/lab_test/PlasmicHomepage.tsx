@@ -59,15 +59,14 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import Button from "../../Button"; // plasmic-import: wX4cqxiNHL1U/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: alyg4GEueul_/codeComponent
+import Button from "../../Button"; // plasmic-import: wX4cqxiNHL1U/component
 import { FormWrapper } from "@plasmicpkgs/antd5/skinny/Form";
 import { formHelpers as FormWrapper_Helpers } from "@plasmicpkgs/antd5/skinny/Form";
 import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/FormItem";
 import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
-import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariants_8J7GhLNtJ6O4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: 8J7ghLNtJ6O4/globalVariant
 
@@ -483,26 +482,6 @@ function PlasmicHomepage__RenderFunc(props: {
                         "\u0648\u0636\u0639\u06cc\u062a \u0642\u0646\u062f \u062e\u0648\u0646"
                       }
                     </h1>
-                    <Button
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button__f3ECl
-                      )}
-                      color={"warning"}
-                      disabled={true}
-                      label={
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__twQxM
-                          )}
-                        >
-                          {"Text"}
-                        </div>
-                      }
-                    />
-
                     <ApiRequest
                       data-plasmic-name={"apiRequest"}
                       data-plasmic-override={overrides.apiRequest}
@@ -584,18 +563,6 @@ function PlasmicHomepage__RenderFunc(props: {
                           : "https://yacasop123.app.n8n.cloud/webhook-test/39b6be6a-ecdf-470b-95f3-f24f36c3621e"
                       }
                     />
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__oo2Pw
-                      )}
-                    >
-                      {
-                        "\u062a\u062d\u0644\u06cc\u0644 \u0642\u0646\u062f \u062e\u0648\u0646 : \u062a\u0648\u0636\u06cc\u062d\u0627\u062a"
-                      }
-                    </div>
                   </div>
                 </div>
               </div>
@@ -612,34 +579,6 @@ function PlasmicHomepage__RenderFunc(props: {
                     "\u0648\u0636\u0639\u06cc\u062a \u0686\u0631\u0628\u06cc \u062e\u0648\u0646"
                   }
                 </h1>
-                <Button
-                  className={classNames("__wab_instance", sty.button___1N3Vc)}
-                  color={"warning"}
-                  disabled={true}
-                  label={
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__a1Kmx
-                      )}
-                    >
-                      {"Text"}
-                    </div>
-                  }
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___5G2ES
-                  )}
-                >
-                  {
-                    "\u062a\u062d\u0644\u06cc\u0644 \u0642\u0646\u062f \u062e\u0648\u0646 : \u062a\u0648\u0636\u06cc\u062d\u0627\u062a"
-                  }
-                </div>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__j7Es)}>
                 <h1
@@ -654,38 +593,6 @@ function PlasmicHomepage__RenderFunc(props: {
                     "\u0639\u0645\u0644\u06a9\u0631\u062f \u06a9\u0644\u06cc\u0647"
                   }
                 </h1>
-                <Button
-                  className={classNames("__wab_instance", sty.button__iBtPo)}
-                  color={"warning"}
-                  disabled={true}
-                  label={
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__tpd9M
-                      )}
-                    >
-                      {"Text"}
-                    </div>
-                  }
-                />
-
-                <Button
-                  className={classNames("__wab_instance", sty.button__xg7L)}
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__pFdly
-                  )}
-                >
-                  {
-                    "\u062a\u062d\u0644\u06cc\u0644 \u0642\u0646\u062f \u062e\u0648\u0646 : \u062a\u0648\u0636\u06cc\u062d\u0627\u062a"
-                  }
-                </div>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__pHhzZ)}>
                 <h1
@@ -698,34 +605,6 @@ function PlasmicHomepage__RenderFunc(props: {
                 >
                   {"\u0639\u0645\u0644\u06a9\u0631\u062f \u06a9\u0628\u062f"}
                 </h1>
-                <Button
-                  className={classNames("__wab_instance", sty.button__cmDkg)}
-                  color={"warning"}
-                  disabled={true}
-                  label={
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___9Tr9
-                      )}
-                    >
-                      {"Text"}
-                    </div>
-                  }
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__jX19
-                  )}
-                >
-                  {
-                    "\u062a\u062d\u0644\u06cc\u0644 \u0642\u0646\u062f \u062e\u0648\u0646 : \u062a\u0648\u0636\u06cc\u062d\u0627\u062a"
-                  }
-                </div>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__azxiq)}>
                 <h1
@@ -740,34 +619,6 @@ function PlasmicHomepage__RenderFunc(props: {
                     "\u0648\u0636\u0639\u0628\u062a \u06a9\u0644\u06cc \u062e\u0648\u0646"
                   }
                 </h1>
-                <Button
-                  className={classNames("__wab_instance", sty.button__gJj6U)}
-                  color={"warning"}
-                  disabled={true}
-                  label={
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__vQh7
-                      )}
-                    >
-                      {"Text"}
-                    </div>
-                  }
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__pLz3
-                  )}
-                >
-                  {
-                    "\u062a\u062d\u0644\u06cc\u0644 \u0642\u0646\u062f \u062e\u0648\u0646 : \u062a\u0648\u0636\u06cc\u062d\u0627\u062a"
-                  }
-                </div>
                 <Button
                   className={classNames("__wab_instance", sty.button__arhMh)}
                   label={
