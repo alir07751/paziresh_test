@@ -401,9 +401,9 @@ function PlasmicHomepage__RenderFunc(props: {
     componentData: usePlasmicDataOp(() => {
       return {
         sourceId: "1AzyU4S4PrdrcaU5SzdxLe",
-        opId: "013dcd29-4d4e-44b9-8fc6-b9a00fd01e6c",
+        opId: "fea0dd86-e092-4bf0-aefc-d6dcf0186889",
         userArgs: {},
-        cacheKey: `plasmic.$.013dcd29-4d4e-44b9-8fc6-b9a00fd01e6c.$.`,
+        cacheKey: `plasmic.$.fea0dd86-e092-4bf0-aefc-d6dcf0186889.$.`,
         invalidatedKeys: null,
         roleId: null
       };
@@ -692,6 +692,10 @@ function PlasmicHomepage__RenderFunc(props: {
                   }
                 />
 
+                <Button
+                  className={classNames("__wab_instance", sty.button__xg7L)}
+                />
+
                 <div
                   className={classNames(
                     projectcss.all,
@@ -857,6 +861,61 @@ function PlasmicHomepage__RenderFunc(props: {
                     })()}
                   </React.Fragment>
                 </div>
+                <Button
+                  className={classNames("__wab_instance", sty.button__arhMh)}
+                  label={
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__jxNxV
+                      )}
+                    >
+                      {
+                        "\u062b\u0628\u062a \u0622\u0632\u0645\u0627\u06cc\u0634 \u062c\u062f\u06cc\u062f"
+                      }
+                    </div>
+                  }
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateShowResults"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["showResults"]
+                            },
+                            operation: 0,
+                            value: false
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateShowResults"] != null &&
+                      typeof $steps["updateShowResults"] === "object" &&
+                      typeof $steps["updateShowResults"].then === "function"
+                    ) {
+                      $steps["updateShowResults"] = await $steps[
+                        "updateShowResults"
+                      ];
+                    }
+                  }}
+                />
               </div>
             </div>
           ) : null}
@@ -994,40 +1053,6 @@ function PlasmicHomepage__RenderFunc(props: {
                       typeof $steps["n8NApi"].then === "function"
                     ) {
                       $steps["n8NApi"] = await $steps["n8NApi"];
-                    }
-
-                    $steps["updateSelectid"] = false
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["selectid"]
-                            },
-                            operation: 0,
-                            value: $steps.sendDataToN8N
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateSelectid"] != null &&
-                      typeof $steps["updateSelectid"] === "object" &&
-                      typeof $steps["updateSelectid"].then === "function"
-                    ) {
-                      $steps["updateSelectid"] = await $steps["updateSelectid"];
                     }
 
                     $steps["showResults"] = true
