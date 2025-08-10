@@ -93,7 +93,6 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
-  section?: Flex__<"section">;
   glo?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
   form?: Flex__<typeof FormWrapper>;
@@ -445,33 +444,6 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
-          <section
-            data-plasmic-name={"section"}
-            data-plasmic-override={overrides.section}
-            className={classNames(projectcss.all, sty.section)}
-          >
-            {(
-              hasVariant(globalVariants, "screen", "mobileOnly") ? true : false
-            ) ? (
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__wLuPv)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/lab_test/images/image3.png",
-                  fullWidth: 600,
-                  fullHeight: 87,
-                  aspectRatio: undefined
-                }}
-              />
-            ) : null}
-          </section>
           {(
             hasVariant(globalVariants, "screen", "mobileOnly")
               ? (() => {
@@ -872,25 +844,6 @@ function PlasmicHomepage__RenderFunc(props: {
               : true
           ) ? (
             <div className={classNames(projectcss.all, sty.freeBox__l88BM)}>
-              <div className={classNames(projectcss.all, sty.freeBox__eg99N)}>
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__xzS7Q)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"auto"}
-                  loading={"lazy"}
-                  src={{
-                    src: "/plasmic/lab_test/images/image5.png",
-                    fullWidth: 526,
-                    fullHeight: 113,
-                    aspectRatio: undefined
-                  }}
-                />
-              </div>
               <h1
                 className={classNames(
                   projectcss.all,
@@ -2220,7 +2173,6 @@ function PlasmicHomepage__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "section",
     "glo",
     "apiRequest",
     "form",
@@ -2248,7 +2200,6 @@ const PlasmicDescendants = {
     "input22",
     "input23"
   ],
-  section: ["section"],
   glo: ["glo", "apiRequest"],
   apiRequest: ["apiRequest"],
   form: [
@@ -2306,7 +2257,6 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  section: "section";
   glo: "div";
   apiRequest: typeof ApiRequest;
   form: typeof FormWrapper;
@@ -2395,7 +2345,6 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    section: makeNodeComponent("section"),
     glo: makeNodeComponent("glo"),
     apiRequest: makeNodeComponent("apiRequest"),
     form: makeNodeComponent("form"),
