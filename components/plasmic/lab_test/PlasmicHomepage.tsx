@@ -59,7 +59,6 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { usePlasmicDataSourceContext } from "@plasmicapp/data-sources-context";
 import {
   executePlasmicDataOp,
   usePlasmicDataOp,
@@ -386,7 +385,7 @@ function PlasmicHomepage__RenderFunc(props: {
         path: "showResults",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) => true
       }
     ],
     [$props, $ctx, $refs]
@@ -397,22 +396,8 @@ function PlasmicHomepage__RenderFunc(props: {
     $queries: $queries,
     $refs
   });
-  const dataSourcesCtx = usePlasmicDataSourceContext();
-  const plasmicInvalidate = usePlasmicInvalidate();
 
   const new$Queries: Record<string, ReturnType<typeof usePlasmicDataOp>> = {
-    query: usePlasmicDataOp(() => {
-      return {
-        sourceId: "1AzyU4S4PrdrcaU5SzdxLe",
-        opId: "e01d683b-2c1d-40e3-b565-6a0e269bd867",
-        userArgs: {
-          filters: [$state.selectedId, undefined]
-        },
-        cacheKey: `plasmic.$.e01d683b-2c1d-40e3-b565-6a0e269bd867.$.`,
-        invalidatedKeys: null,
-        roleId: null
-      };
-    }),
     componentData: usePlasmicDataOp(() => {
       return {
         sourceId: "1AzyU4S4PrdrcaU5SzdxLe",
@@ -966,7 +951,35 @@ function PlasmicHomepage__RenderFunc(props: {
                           const actionArgs = {
                             args: [
                               "POST",
-                              "https://yacasop123.app.n8n.cloud/webhook/39b6be6a-ecdf-470b-95f3-f24f36c3621e"
+                              "https://yacasop123.app.n8n.cloud/webhook-test/39b6be6a-ecdf-470b-95f3-f24f36c3621e",
+                              (() => {
+                                try {
+                                  return undefined;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })(),
+                              (() => {
+                                try {
+                                  return $state.form.value;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()
                             ]
                           };
                           return $globalActions["Fragment.apiRequest"]?.apply(
@@ -1049,39 +1062,6 @@ function PlasmicHomepage__RenderFunc(props: {
                       typeof $steps["showResults"].then === "function"
                     ) {
                       $steps["showResults"] = await $steps["showResults"];
-                    }
-
-                    $steps["refreshData"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            queryInvalidation: (() => {
-                              try {
-                                return $queries.query;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return [];
-                                }
-                                throw e;
-                              }
-                            })()
-                          };
-                          return (async ({ queryInvalidation }) => {
-                            if (!queryInvalidation) {
-                              return;
-                            }
-                            await plasmicInvalidate(queryInvalidation);
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["refreshData"] != null &&
-                      typeof $steps["refreshData"] === "object" &&
-                      typeof $steps["refreshData"].then === "function"
-                    ) {
-                      $steps["refreshData"] = await $steps["refreshData"];
                     }
                   },
                   onIsSubmittingChange: async (...eventArgs: any) => {
