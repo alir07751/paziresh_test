@@ -66,6 +66,7 @@ import {
 } from "@plasmicapp/react-web/lib/data-sources";
 
 import Button from "../../Button"; // plasmic-import: wX4cqxiNHL1U/component
+import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: alyg4GEueul_/codeComponent
 import { FormWrapper } from "@plasmicpkgs/antd5/skinny/Form";
 import { formHelpers as FormWrapper_Helpers } from "@plasmicpkgs/antd5/skinny/Form";
 import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/FormItem";
@@ -99,6 +100,7 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
   glo?: Flex__<"div">;
+  apiRequest?: Flex__<typeof ApiRequest>;
   form?: Flex__<typeof FormWrapper>;
   input?: Flex__<typeof AntdInput>;
   input2?: Flex__<typeof AntdInput>;
@@ -386,6 +388,30 @@ function PlasmicHomepage__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => true
+      },
+      {
+        path: "apiRequest.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       }
     ],
     [$props, $ctx, $refs]
@@ -525,24 +551,90 @@ function PlasmicHomepage__RenderFunc(props: {
                             sty.text__twQxM
                           )}
                         >
+                          {"Text"}
+                        </div>
+                      }
+                    />
+
+                    <ApiRequest
+                      data-plasmic-name={"apiRequest"}
+                      data-plasmic-override={overrides.apiRequest}
+                      className={classNames("__wab_instance", sty.apiRequest)}
+                      config={
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? $state.apiRequest.data
+                          : {
+                              headers: {
+                                apikey:
+                                  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZobmpvdmN5dmZla2Z3Zm14cnJ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMyNTc2NjAsImV4cCI6MjA2ODgzMzY2MH0.o5w28ucmQ3EBS7K-V6eG0owTYcq3weQU9KScZpb58To",
+                                Authorization:
+                                  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZobmpvdmN5dmZla2Z3Zm14cnJ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMyNTc2NjAsImV4cCI6MjA2ODgzMzY2MH0.o5w28ucmQ3EBS7K-V6eG0owTYcq3weQU9KScZpb58To",
+                                Accept: "application/json"
+                              }
+                            }
+                      }
+                      errorDisplay={
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__ludMq
+                          )}
+                        >
                           <React.Fragment>
                             {(() => {
                               try {
                                 return $queries.componentData.data[0][
-                                  "Glucose State"
+                                  "Glucose Description"
                                 ];
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
                                   e?.plasmicType === "PlasmicUndefinedDataError"
                                 ) {
-                                  return "Text";
+                                  return "Error fetching data";
                                 }
                                 throw e;
                               }
                             })()}
                           </React.Fragment>
                         </div>
+                      }
+                      loadingDisplay={
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__tCplA
+                          )}
+                        >
+                          {"Loading..."}
+                        </div>
+                      }
+                      method={"POST"}
+                      onError={async (...eventArgs: any) => {
+                        generateStateOnChangeProp($state, [
+                          "apiRequest",
+                          "error"
+                        ]).apply(null, eventArgs);
+                      }}
+                      onLoading={async (...eventArgs: any) => {
+                        generateStateOnChangeProp($state, [
+                          "apiRequest",
+                          "loading"
+                        ]).apply(null, eventArgs);
+                      }}
+                      onSuccess={async (...eventArgs: any) => {
+                        generateStateOnChangeProp($state, [
+                          "apiRequest",
+                          "data"
+                        ]).apply(null, eventArgs);
+                      }}
+                      ref={ref => {
+                        $refs["apiRequest"] = ref;
+                      }}
+                      url={
+                        "https://yacasop123.app.n8n.cloud/webhook-test/39b6be6a-ecdf-470b-95f3-f24f36c3621e"
                       }
                     />
 
@@ -553,23 +645,9 @@ function PlasmicHomepage__RenderFunc(props: {
                         sty.text__oo2Pw
                       )}
                     >
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return $queries.componentData.data[0][
-                              "Glucose Description"
-                            ];
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "\u062a\u062d\u0644\u06cc\u0644 \u0642\u0646\u062f \u062e\u0648\u0646 : \u062a\u0648\u0636\u06cc\u062d\u0627\u062a";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
+                      {
+                        "\u062a\u062d\u0644\u06cc\u0644 \u0642\u0646\u062f \u062e\u0648\u0646 : \u062a\u0648\u0636\u06cc\u062d\u0627\u062a"
+                      }
                     </div>
                   </div>
                 </div>
@@ -599,23 +677,7 @@ function PlasmicHomepage__RenderFunc(props: {
                         sty.text__a1Kmx
                       )}
                     >
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return $queries.componentData.data[0][
-                              "Cholesterol State"
-                            ];
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "Text";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
+                      {"Text"}
                     </div>
                   }
                 />
@@ -625,6 +687,17 @@ function PlasmicHomepage__RenderFunc(props: {
                     projectcss.all,
                     projectcss.__wab_text,
                     sty.text___5G2ES
+                  )}
+                >
+                  {
+                    "\u062a\u062d\u0644\u06cc\u0644 \u0642\u0646\u062f \u062e\u0648\u0646 : \u062a\u0648\u0636\u06cc\u062d\u0627\u062a"
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__cDdVt
                   )}
                 >
                   <React.Fragment>
@@ -638,7 +711,7 @@ function PlasmicHomepage__RenderFunc(props: {
                           e instanceof TypeError ||
                           e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          return "\u062a\u062d\u0644\u06cc\u0644 \u0642\u0646\u062f \u062e\u0648\u0646 : \u062a\u0648\u0636\u06cc\u062d\u0627\u062a";
+                          return "Error fetching data";
                         }
                         throw e;
                       }
@@ -671,23 +744,7 @@ function PlasmicHomepage__RenderFunc(props: {
                         sty.text__tpd9M
                       )}
                     >
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return $queries.componentData.data[0][
-                              "Kidney State"
-                            ];
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "Text";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
+                      {"Text"}
                     </div>
                   }
                 />
@@ -703,6 +760,17 @@ function PlasmicHomepage__RenderFunc(props: {
                     sty.text__pFdly
                   )}
                 >
+                  {
+                    "\u062a\u062d\u0644\u06cc\u0644 \u0642\u0646\u062f \u062e\u0648\u0646 : \u062a\u0648\u0636\u06cc\u062d\u0627\u062a"
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__bmwAp
+                  )}
+                >
                   <React.Fragment>
                     {(() => {
                       try {
@@ -714,7 +782,7 @@ function PlasmicHomepage__RenderFunc(props: {
                           e instanceof TypeError ||
                           e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          return "\u062a\u062d\u0644\u06cc\u0644 \u0642\u0646\u062f \u062e\u0648\u0646 : \u062a\u0648\u0636\u06cc\u062d\u0627\u062a";
+                          return "Error fetching data";
                         }
                         throw e;
                       }
@@ -745,23 +813,7 @@ function PlasmicHomepage__RenderFunc(props: {
                         sty.text___9Tr9
                       )}
                     >
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return $queries.componentData.data[0][
-                              "Liver State"
-                            ];
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "Text";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
+                      {"Text"}
                     </div>
                   }
                 />
@@ -771,6 +823,17 @@ function PlasmicHomepage__RenderFunc(props: {
                     projectcss.all,
                     projectcss.__wab_text,
                     sty.text__jX19
+                  )}
+                >
+                  {
+                    "\u062a\u062d\u0644\u06cc\u0644 \u0642\u0646\u062f \u062e\u0648\u0646 : \u062a\u0648\u0636\u06cc\u062d\u0627\u062a"
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__kUbsL
                   )}
                 >
                   <React.Fragment>
@@ -784,7 +847,7 @@ function PlasmicHomepage__RenderFunc(props: {
                           e instanceof TypeError ||
                           e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          return "\u062a\u062d\u0644\u06cc\u0644 \u0642\u0646\u062f \u062e\u0648\u0646 : \u062a\u0648\u0636\u06cc\u062d\u0627\u062a";
+                          return "Error fetching data";
                         }
                         throw e;
                       }
@@ -817,21 +880,7 @@ function PlasmicHomepage__RenderFunc(props: {
                         sty.text__vQh7
                       )}
                     >
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return $queries.componentData.data[0]["CBC State"];
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "Text";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
+                      {"Text"}
                     </div>
                   }
                 />
@@ -841,6 +890,17 @@ function PlasmicHomepage__RenderFunc(props: {
                     projectcss.all,
                     projectcss.__wab_text,
                     sty.text__pLz3
+                  )}
+                >
+                  {
+                    "\u062a\u062d\u0644\u06cc\u0644 \u0642\u0646\u062f \u062e\u0648\u0646 : \u062a\u0648\u0636\u06cc\u062d\u0627\u062a"
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__hFVt
                   )}
                 >
                   <React.Fragment>
@@ -854,7 +914,7 @@ function PlasmicHomepage__RenderFunc(props: {
                           e instanceof TypeError ||
                           e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          return "\u062a\u062d\u0644\u06cc\u0644 \u0642\u0646\u062f \u062e\u0648\u0646 : \u062a\u0648\u0636\u06cc\u062d\u0627\u062a";
+                          return "Error fetching data";
                         }
                         throw e;
                       }
@@ -2286,6 +2346,7 @@ const PlasmicDescendants = {
   root: [
     "root",
     "glo",
+    "apiRequest",
     "form",
     "input",
     "input2",
@@ -2311,7 +2372,8 @@ const PlasmicDescendants = {
     "input22",
     "input23"
   ],
-  glo: ["glo"],
+  glo: ["glo", "apiRequest"],
+  apiRequest: ["apiRequest"],
   form: [
     "form",
     "input",
@@ -2368,6 +2430,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   glo: "div";
+  apiRequest: typeof ApiRequest;
   form: typeof FormWrapper;
   input: typeof AntdInput;
   input2: typeof AntdInput;
@@ -2455,6 +2518,7 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     glo: makeNodeComponent("glo"),
+    apiRequest: makeNodeComponent("apiRequest"),
     form: makeNodeComponent("form"),
     input: makeNodeComponent("input"),
     input2: makeNodeComponent("input2"),
