@@ -59,12 +59,6 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import {
-  executePlasmicDataOp,
-  usePlasmicDataOp,
-  usePlasmicInvalidate
-} from "@plasmicapp/react-web/lib/data-sources";
-
 import Button from "../../Button"; // plasmic-import: wX4cqxiNHL1U/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: alyg4GEueul_/codeComponent
 import { FormWrapper } from "@plasmicpkgs/antd5/skinny/Form";
@@ -99,6 +93,7 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
+  section?: Flex__<"section">;
   glo?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
   form?: Flex__<typeof FormWrapper>;
@@ -170,9 +165,6 @@ function PlasmicHomepage__RenderFunc(props: {
 
   const $globalActions = useGlobalActions?.();
 
-  let [$queries, setDollarQueries] = React.useState<
-    Record<string, ReturnType<typeof usePlasmicDataOp>>
-  >({});
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
@@ -419,27 +411,9 @@ function PlasmicHomepage__RenderFunc(props: {
   const $state = useDollarState(stateSpecs, {
     $props,
     $ctx,
-    $queries: $queries,
+    $queries: {},
     $refs
   });
-
-  const new$Queries: Record<string, ReturnType<typeof usePlasmicDataOp>> = {
-    componentData: usePlasmicDataOp(() => {
-      return {
-        sourceId: "1AzyU4S4PrdrcaU5SzdxLe",
-        opId: "fea0dd86-e092-4bf0-aefc-d6dcf0186889",
-        userArgs: {},
-        cacheKey: `plasmic.$.fea0dd86-e092-4bf0-aefc-d6dcf0186889.$.`,
-        invalidatedKeys: null,
-        roleId: null
-      };
-    })
-  };
-  if (Object.keys(new$Queries).some(k => new$Queries[k] !== $queries[k])) {
-    setDollarQueries(new$Queries);
-
-    $queries = new$Queries;
-  }
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariants_8J7GhLNtJ6O4()
@@ -471,7 +445,11 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
-          <section className={classNames(projectcss.all, sty.section__ft23I)}>
+          <section
+            data-plasmic-name={"section"}
+            data-plasmic-override={overrides.section}
+            className={classNames(projectcss.all, sty.section)}
+          >
             {(
               hasVariant(globalVariants, "screen", "mobileOnly") ? true : false
             ) ? (
@@ -493,9 +471,6 @@ function PlasmicHomepage__RenderFunc(props: {
                 }}
               />
             ) : null}
-          </section>
-          <section className={classNames(projectcss.all, sty.section__wlXt)}>
-            <div className={classNames(projectcss.all, sty.freeBox__raRSt)} />
           </section>
           {(
             hasVariant(globalVariants, "screen", "mobileOnly")
@@ -584,9 +559,7 @@ function PlasmicHomepage__RenderFunc(props: {
                           <React.Fragment>
                             {(() => {
                               try {
-                                return $queries.componentData.data[0][
-                                  "Glucose Description"
-                                ];
+                                return $state.apiRequest.data;
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
@@ -634,7 +607,9 @@ function PlasmicHomepage__RenderFunc(props: {
                         $refs["apiRequest"] = ref;
                       }}
                       url={
-                        "https://yacasop123.app.n8n.cloud/webhook-test/39b6be6a-ecdf-470b-95f3-f24f36c3621e"
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? "https://yacasop123.app.n8n.cloud/webhook-test/39b6be6a-ecdf-470b-95f3-f24f36c3621e"
+                          : "https://yacasop123.app.n8n.cloud/webhook-test/39b6be6a-ecdf-470b-95f3-f24f36c3621e"
                       }
                     />
 
@@ -693,31 +668,6 @@ function PlasmicHomepage__RenderFunc(props: {
                     "\u062a\u062d\u0644\u06cc\u0644 \u0642\u0646\u062f \u062e\u0648\u0646 : \u062a\u0648\u0636\u06cc\u062d\u0627\u062a"
                   }
                 </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__cDdVt
-                  )}
-                >
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return $queries.componentData.data[0][
-                          "Cholesterol Description"
-                        ];
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "Error fetching data";
-                        }
-                        throw e;
-                      }
-                    })()}
-                  </React.Fragment>
-                </div>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__j7Es)}>
                 <h1
@@ -764,31 +714,6 @@ function PlasmicHomepage__RenderFunc(props: {
                     "\u062a\u062d\u0644\u06cc\u0644 \u0642\u0646\u062f \u062e\u0648\u0646 : \u062a\u0648\u0636\u06cc\u062d\u0627\u062a"
                   }
                 </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__bmwAp
-                  )}
-                >
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return $queries.componentData.data[0][
-                          "Kidney Description"
-                        ];
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "Error fetching data";
-                        }
-                        throw e;
-                      }
-                    })()}
-                  </React.Fragment>
-                </div>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__pHhzZ)}>
                 <h1
@@ -828,31 +753,6 @@ function PlasmicHomepage__RenderFunc(props: {
                   {
                     "\u062a\u062d\u0644\u06cc\u0644 \u0642\u0646\u062f \u062e\u0648\u0646 : \u062a\u0648\u0636\u06cc\u062d\u0627\u062a"
                   }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__kUbsL
-                  )}
-                >
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return $queries.componentData.data[0][
-                          "Liver Description"
-                        ];
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "Error fetching data";
-                        }
-                        throw e;
-                      }
-                    })()}
-                  </React.Fragment>
                 </div>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__azxiq)}>
@@ -895,31 +795,6 @@ function PlasmicHomepage__RenderFunc(props: {
                   {
                     "\u062a\u062d\u0644\u06cc\u0644 \u0642\u0646\u062f \u062e\u0648\u0646 : \u062a\u0648\u0636\u06cc\u062d\u0627\u062a"
                   }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__hFVt
-                  )}
-                >
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return $queries.componentData.data[0][
-                          "CBC Description"
-                        ];
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "Error fetching data";
-                        }
-                        throw e;
-                      }
-                    })()}
-                  </React.Fragment>
                 </div>
                 <Button
                   className={classNames("__wab_instance", sty.button__arhMh)}
@@ -2345,6 +2220,7 @@ function PlasmicHomepage__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "section",
     "glo",
     "apiRequest",
     "form",
@@ -2372,6 +2248,7 @@ const PlasmicDescendants = {
     "input22",
     "input23"
   ],
+  section: ["section"],
   glo: ["glo", "apiRequest"],
   apiRequest: ["apiRequest"],
   form: [
@@ -2429,6 +2306,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  section: "section";
   glo: "div";
   apiRequest: typeof ApiRequest;
   form: typeof FormWrapper;
@@ -2517,6 +2395,7 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    section: makeNodeComponent("section"),
     glo: makeNodeComponent("glo"),
     apiRequest: makeNodeComponent("apiRequest"),
     form: makeNodeComponent("form"),
