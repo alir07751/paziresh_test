@@ -8,6 +8,9 @@ import * as React from "react";
 import { hasVariant, ensureGlobalVariants } from "@plasmicapp/react-web";
 import { AntdConfigProvider } from "@plasmicpkgs/antd5/skinny/registerConfigProvider";
 import { EmbedCss } from "@plasmicpkgs/plasmic-embed-css";
+import { Fragment } from "@/fragment/fragment"; // plasmic-import: knPzX-q7mtkn/codeComponent
+import { GrowthBook } from "@/fragment/growthbook"; // plasmic-import: ch-X6-Ic4Vzs/codeComponent
+import { Splunk } from "@/fragment/splunk"; // plasmic-import: GaSA3t1aSRcT/codeComponent
 
 export interface GlobalContextsProviderProps {
   children?: React.ReactElement;
@@ -17,12 +20,26 @@ export interface GlobalContextsProviderProps {
   embedCssProps?: Partial<
     Omit<React.ComponentProps<typeof EmbedCss>, "children">
   >;
+  fragmentProps?: Partial<
+    Omit<React.ComponentProps<typeof Fragment>, "children">
+  >;
+  growthBookProps?: Partial<
+    Omit<React.ComponentProps<typeof GrowthBook>, "children">
+  >;
+  splunkProps?: Partial<Omit<React.ComponentProps<typeof Splunk>, "children">>;
 }
 
 export default function GlobalContextsProvider(
   props: GlobalContextsProviderProps
 ) {
-  const { children, antdConfigProviderProps, embedCssProps } = props;
+  const {
+    children,
+    antdConfigProviderProps,
+    embedCssProps,
+    fragmentProps,
+    growthBookProps,
+    splunkProps
+  } = props;
 
   return (
     <AntdConfigProvider
@@ -125,7 +142,64 @@ export default function GlobalContextsProvider(
             : undefined
         }
       >
-        {children}
+        <Fragment
+          {...fragmentProps}
+          apiConfig={
+            fragmentProps && "apiConfig" in fragmentProps
+              ? fragmentProps.apiConfig!
+              : undefined
+          }
+          previewApiConfig={
+            fragmentProps && "previewApiConfig" in fragmentProps
+              ? fragmentProps.previewApiConfig!
+              : undefined
+          }
+          primaryColor={
+            fragmentProps && "primaryColor" in fragmentProps
+              ? fragmentProps.primaryColor!
+              : "#000000"
+          }
+          rtl={
+            fragmentProps && "rtl" in fragmentProps
+              ? fragmentProps.rtl!
+              : undefined
+          }
+        >
+          <GrowthBook
+            {...growthBookProps}
+            apiHost={
+              growthBookProps && "apiHost" in growthBookProps
+                ? growthBookProps.apiHost!
+                : undefined
+            }
+            clientKey={
+              growthBookProps && "clientKey" in growthBookProps
+                ? growthBookProps.clientKey!
+                : undefined
+            }
+            previewAttributes={
+              growthBookProps && "previewAttributes" in growthBookProps
+                ? growthBookProps.previewAttributes!
+                : undefined
+            }
+          >
+            <Splunk
+              {...splunkProps}
+              defaultApiHost={
+                splunkProps && "defaultApiHost" in splunkProps
+                  ? splunkProps.defaultApiHost!
+                  : undefined
+              }
+              defaultApiKey={
+                splunkProps && "defaultApiKey" in splunkProps
+                  ? splunkProps.defaultApiKey!
+                  : undefined
+              }
+            >
+              {children}
+            </Splunk>
+          </GrowthBook>
+        </Fragment>
       </EmbedCss>
     </AntdConfigProvider>
   );

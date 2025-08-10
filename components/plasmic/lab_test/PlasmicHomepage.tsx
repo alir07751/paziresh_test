@@ -167,6 +167,8 @@ function PlasmicHomepage__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
+  const $globalActions = useGlobalActions?.();
+
   let [$queries, setDollarQueries] = React.useState<
     Record<string, ReturnType<typeof usePlasmicDataOp>>
   >({});
@@ -959,46 +961,26 @@ function PlasmicHomepage__RenderFunc(props: {
                   onFinish: async values => {
                     const $steps = {};
 
-                    $steps["sendDataToN8N"] = true
+                    $steps["n8NApi"] = true
                       ? (() => {
                           const actionArgs = {
-                            dataOp: {
-                              sourceId: "j3Q7Y4FXAjq8YX7YKSFkB2",
-                              opId: "9b361539-6c07-4a75-a514-0baa8c510610",
-                              userArgs: {
-                                body: [$state.form.value]
-                              },
-                              cacheKey: null,
-                              invalidatedKeys: null,
-                              roleId: null
-                            }
+                            args: [
+                              "POST",
+                              "https://yacasop123.app.n8n.cloud/webhook/39b6be6a-ecdf-470b-95f3-f24f36c3621e"
+                            ]
                           };
-                          return (async ({ dataOp, continueOnError }) => {
-                            try {
-                              const response = await executePlasmicDataOp(
-                                dataOp,
-                                {
-                                  userAuthToken: dataSourcesCtx?.userAuthToken,
-                                  user: dataSourcesCtx?.user
-                                }
-                              );
-                              await plasmicInvalidate(dataOp.invalidatedKeys);
-                              return response;
-                            } catch (e) {
-                              if (!continueOnError) {
-                                throw e;
-                              }
-                              return e;
-                            }
-                          })?.apply(null, [actionArgs]);
+                          return $globalActions["Fragment.apiRequest"]?.apply(
+                            null,
+                            [...actionArgs.args]
+                          );
                         })()
                       : undefined;
                     if (
-                      $steps["sendDataToN8N"] != null &&
-                      typeof $steps["sendDataToN8N"] === "object" &&
-                      typeof $steps["sendDataToN8N"].then === "function"
+                      $steps["n8NApi"] != null &&
+                      typeof $steps["n8NApi"] === "object" &&
+                      typeof $steps["n8NApi"].then === "function"
                     ) {
-                      $steps["sendDataToN8N"] = await $steps["sendDataToN8N"];
+                      $steps["n8NApi"] = await $steps["n8NApi"];
                     }
 
                     $steps["updateSelectid"] = false
