@@ -377,7 +377,7 @@ function PlasmicHomepage__RenderFunc(props: {
         path: "showResults",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => true
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
         path: "apiRequest.data",
