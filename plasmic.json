@@ -709,20 +709,6 @@
       "cssFilePath": "plasmic/lab_test/plasmic.module.css",
       "components": [
         {
-          "id": "xkbO757stMGy",
-          "name": "Homepage",
-          "type": "managed",
-          "projectId": "mDEHsX1J3YSWVvMcFkMkt9",
-          "renderModuleFilePath": "plasmic/lab_test/PlasmicHomepage.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/homepage.tsx"
-          },
-          "cssFilePath": "plasmic/lab_test/PlasmicHomepage.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/homepage"
-        },
-        {
           "id": "41oH0eXWuuyU",
           "name": "Label",
           "type": "managed",
@@ -853,20 +839,6 @@
           "componentType": "component"
         },
         {
-          "id": "7RlS78lREQJn",
-          "name": "Homepage3",
-          "type": "managed",
-          "projectId": "mDEHsX1J3YSWVvMcFkMkt9",
-          "renderModuleFilePath": "plasmic/lab_test/PlasmicHomepage3.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/new-page-3.tsx"
-          },
-          "cssFilePath": "plasmic/lab_test/PlasmicHomepage3.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/new-page-3"
-        },
-        {
           "id": "uigk3RmWP41n",
           "name": "Homepage4",
           "type": "managed",
@@ -921,6 +893,34 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/new-page-7"
+        },
+        {
+          "id": "xkbO757stMGy",
+          "name": "Form",
+          "type": "managed",
+          "projectId": "mDEHsX1J3YSWVvMcFkMkt9",
+          "renderModuleFilePath": "plasmic/lab_test/PlasmicForm.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/homepage.tsx"
+          },
+          "cssFilePath": "plasmic/lab_test/PlasmicForm.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/homepage"
+        },
+        {
+          "id": "7RlS78lREQJn",
+          "name": "Res",
+          "type": "managed",
+          "projectId": "mDEHsX1J3YSWVvMcFkMkt9",
+          "renderModuleFilePath": "plasmic/lab_test/PlasmicRes.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/new-page-3.tsx"
+          },
+          "cssFilePath": "plasmic/lab_test/PlasmicRes.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/new-page-3"
         }
       ],
       "icons": [
