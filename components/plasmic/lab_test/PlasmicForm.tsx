@@ -749,7 +749,7 @@ function PlasmicForm__RenderFunc(props: {
                           const actionArgs = {
                             args: [
                               "POST",
-                              "https://paziresh.app.n8n.cloud/webhook-test/39b6be6a-ecdf-470b-95f3-f24f36c3621e",
+                              "https://paziresh.app.n8n.cloud/webhook/39b6be6a-ecdf-470b-95f3-f24f36c3621e",
                               (() => {
                                 try {
                                   return undefined;

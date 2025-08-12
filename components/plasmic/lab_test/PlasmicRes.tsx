@@ -62,6 +62,8 @@ import {
 import Button from "../../Button"; // plasmic-import: wX4cqxiNHL1U/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: alyg4GEueul_/codeComponent
 
+import { useScreenVariants as useScreenVariants_8J7GhLNtJ6O4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: 8J7ghLNtJ6O4/globalVariant
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
@@ -170,6 +172,10 @@ function PlasmicRes__RenderFunc(props: {
     $ctx,
     $queries: {},
     $refs
+  });
+
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariants_8J7GhLNtJ6O4()
   });
 
   return (
@@ -397,7 +403,9 @@ function PlasmicRes__RenderFunc(props: {
                     $refs["apiRequest"] = ref;
                   }}
                   url={
-                    "https://paziresh.app.n8n.cloud/webhook-test/eb9473ee-4a70-49a6-972d-e7e1ab7e228d"
+                    hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? "https://paziresh.app.n8n.cloud/webhook/eb9473ee-4a70-49a6-972d-e7e1ab7e228d"
+                      : "https://paziresh.app.n8n.cloud/webhook-test/eb9473ee-4a70-49a6-972d-e7e1ab7e228d"
                   }
                 />
 

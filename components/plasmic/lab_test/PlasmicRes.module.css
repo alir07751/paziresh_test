@@ -63,6 +63,12 @@
   min-width: 0;
   padding: 8px;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .freeBox__flckf {
+    border-width: var(--token-6vg8Lh9hkzkU);
+    border-style: dotted;
+  }
+}
 .freeBox__zd0Af {
   display: flex;
   flex-direction: column;
@@ -140,6 +146,13 @@
   min-width: 0;
   padding: 8px;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .freeBox___0OPbo {
+    margin-top: 10px;
+    border-width: var(--token-6vg8Lh9hkzkU);
+    border-style: dotted;
+  }
+}
 .h6__t4UZd {
   font-family: "IRANSansX";
 }
@@ -181,6 +194,13 @@
   align-items: center;
   min-width: 0;
   padding: 8px;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .freeBox__zQXn {
+    margin-top: 10px;
+    border-width: var(--token-6vg8Lh9hkzkU);
+    border-style: dotted;
+  }
 }
 .h6__qd7R2 {
   font-family: "IRANSansX";
@@ -224,6 +244,13 @@
   min-width: 0;
   padding: 8px;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .freeBox__eRwBe {
+    margin-top: 10px;
+    border-width: var(--token-6vg8Lh9hkzkU);
+    border-style: dotted;
+  }
+}
 .h6__cOf6G {
   font-family: "IRANSansX";
 }
@@ -265,6 +292,14 @@
   align-items: center;
   min-width: 0;
   padding: 8px;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .freeBox__jZhlb {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border-width: var(--token-6vg8Lh9hkzkU);
+    border-style: dotted;
+  }
 }
 .h6__inb3D {
   font-family: "IRANSansX";
