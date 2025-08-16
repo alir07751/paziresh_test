@@ -123,6 +123,11 @@
   max-width: 100%;
   min-width: 0;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .text__jycky {
+    display: none;
+  }
+}
 .text__sFkLu {
   position: relative;
   width: 100%;

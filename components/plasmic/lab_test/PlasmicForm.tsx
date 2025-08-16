@@ -33,7 +33,6 @@ import {
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts,
-  ensureGlobalVariants,
   generateOnMutateForSpec,
   generateStateOnChangeProp,
   generateStateOnChangePropForCodeComponents,
@@ -59,25 +58,20 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: alyg4GEueul_/codeComponent
-import Button from "../../Button"; // plasmic-import: wX4cqxiNHL1U/component
 import { FormWrapper } from "@plasmicpkgs/antd5/skinny/Form";
 import { formHelpers as FormWrapper_Helpers } from "@plasmicpkgs/antd5/skinny/Form";
 import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/FormItem";
 import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
-
-import { useScreenVariants as useScreenVariants_8J7GhLNtJ6O4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: 8J7ghLNtJ6O4/globalVariant
+import { _useGlobalVariants } from "./plasmic"; // plasmic-import: mDEHsX1J3YSWVvMcFkMkt9/projectModule
+import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: mDEHsX1J3YSWVvMcFkMkt9/styleTokensProvider
+import { _useStyleTokens as useStyleTokens_antd_5_hostless } from ""; // plasmic-import: ohDidvG9XsCeFumugENU3J/styleTokensProvider
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: mDEHsX1J3YSWVvMcFkMkt9/projectcss
 import sty from "./PlasmicForm.module.css"; // plasmic-import: xkbO757stMGy/css
-
-import CircleIcon from "./icons/PlasmicIcon__Circle"; // plasmic-import: MWa29Sm_yoVB/icon
-import ChevronDownIcon from "./icons/PlasmicIcon__ChevronDown"; // plasmic-import: fn8qkSKZ1Ot9/icon
 
 createPlasmicElementProxy;
 
@@ -92,8 +86,7 @@ export const PlasmicForm__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicForm__OverridesType = {
   root?: Flex__<"div">;
-  glo?: Flex__<"div">;
-  apiRequest?: Flex__<typeof ApiRequest>;
+  freeBox?: Flex__<"div">;
   form?: Flex__<typeof FormWrapper>;
   input?: Flex__<typeof AntdInput>;
   input2?: Flex__<typeof AntdInput>;
@@ -118,6 +111,7 @@ export type PlasmicForm__OverridesType = {
   input21?: Flex__<typeof AntdInput>;
   input22?: Flex__<typeof AntdInput>;
   input23?: Flex__<typeof AntdInput>;
+  button?: Flex__<typeof AntdButton>;
 };
 
 export interface DefaultFormProps {}
@@ -378,30 +372,6 @@ function PlasmicForm__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
-      },
-      {
-        path: "apiRequest.data",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest"
-      },
-      {
-        path: "apiRequest.error",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest"
-      },
-      {
-        path: "apiRequest.loading",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest"
       }
     ],
     [$props, $ctx, $refs]
@@ -413,9 +383,10 @@ function PlasmicForm__RenderFunc(props: {
     $refs
   });
 
-  const globalVariants = ensureGlobalVariants({
-    screen: useScreenVariants_8J7GhLNtJ6O4()
-  });
+  const globalVariants = _useGlobalVariants();
+  const styleTokensClassNames = _useStyleTokens();
+  const styleTokensClassNames_antd_5_hostless =
+    useStyleTokens_antd_5_hostless();
 
   return (
     <React.Fragment>
@@ -438,245 +409,11 @@ function PlasmicForm__RenderFunc(props: {
             projectcss.root_reset,
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
-            projectcss.plasmic_tokens,
-            plasmic_antd_5_hostless_css.plasmic_tokens,
+            styleTokensClassNames,
+            styleTokensClassNames_antd_5_hostless,
             sty.root
           )}
         >
-          {(
-            hasVariant(globalVariants, "screen", "mobileOnly")
-              ? (() => {
-                  try {
-                    return $state.showResults;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })()
-              : true
-          ) ? (
-            <div className={classNames(projectcss.all, sty.freeBox__mVNsj)}>
-              <div
-                data-plasmic-name={"glo"}
-                data-plasmic-override={overrides.glo}
-                className={classNames(projectcss.all, sty.glo)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__ozK3T)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__nOnnl)}
-                  >
-                    <h1
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.h1,
-                        projectcss.__wab_text,
-                        sty.h1__mYx0
-                      )}
-                    >
-                      {
-                        "\u0648\u0636\u0639\u06cc\u062a \u0642\u0646\u062f \u062e\u0648\u0646"
-                      }
-                    </h1>
-                    <ApiRequest
-                      data-plasmic-name={"apiRequest"}
-                      data-plasmic-override={overrides.apiRequest}
-                      className={classNames("__wab_instance", sty.apiRequest)}
-                      config={
-                        hasVariant(globalVariants, "screen", "mobileOnly")
-                          ? $state.apiRequest.data
-                          : {
-                              headers: {
-                                apikey:
-                                  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZobmpvdmN5dmZla2Z3Zm14cnJ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMyNTc2NjAsImV4cCI6MjA2ODgzMzY2MH0.o5w28ucmQ3EBS7K-V6eG0owTYcq3weQU9KScZpb58To",
-                                Authorization:
-                                  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZobmpvdmN5dmZla2Z3Zm14cnJ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMyNTc2NjAsImV4cCI6MjA2ODgzMzY2MH0.o5w28ucmQ3EBS7K-V6eG0owTYcq3weQU9KScZpb58To",
-                                Accept: "application/json"
-                              }
-                            }
-                      }
-                      errorDisplay={
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__ludMq
-                          )}
-                        >
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return $state.apiRequest.data;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "Error fetching data";
-                                }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
-                        </div>
-                      }
-                      loadingDisplay={
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__tCplA
-                          )}
-                        >
-                          {"Loading..."}
-                        </div>
-                      }
-                      method={"POST"}
-                      onError={async (...eventArgs: any) => {
-                        generateStateOnChangeProp($state, [
-                          "apiRequest",
-                          "error"
-                        ]).apply(null, eventArgs);
-                      }}
-                      onLoading={async (...eventArgs: any) => {
-                        generateStateOnChangeProp($state, [
-                          "apiRequest",
-                          "loading"
-                        ]).apply(null, eventArgs);
-                      }}
-                      onSuccess={async (...eventArgs: any) => {
-                        generateStateOnChangeProp($state, [
-                          "apiRequest",
-                          "data"
-                        ]).apply(null, eventArgs);
-                      }}
-                      ref={ref => {
-                        $refs["apiRequest"] = ref;
-                      }}
-                      url={
-                        hasVariant(globalVariants, "screen", "mobileOnly")
-                          ? "https://yacasop123.app.n8n.cloud/webhook-test/39b6be6a-ecdf-470b-95f3-f24f36c3621e"
-                          : "https://yacasop123.app.n8n.cloud/webhook-test/39b6be6a-ecdf-470b-95f3-f24f36c3621e"
-                      }
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox___12JN3)}>
-                <h1
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h1,
-                    projectcss.__wab_text,
-                    sty.h1__nveK2
-                  )}
-                >
-                  {
-                    "\u0648\u0636\u0639\u06cc\u062a \u0686\u0631\u0628\u06cc \u062e\u0648\u0646"
-                  }
-                </h1>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__j7Es)}>
-                <h1
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h1,
-                    projectcss.__wab_text,
-                    sty.h1__lYuhL
-                  )}
-                >
-                  {
-                    "\u0639\u0645\u0644\u06a9\u0631\u062f \u06a9\u0644\u06cc\u0647"
-                  }
-                </h1>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__pHhzZ)}>
-                <h1
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h1,
-                    projectcss.__wab_text,
-                    sty.h1__oViD
-                  )}
-                >
-                  {"\u0639\u0645\u0644\u06a9\u0631\u062f \u06a9\u0628\u062f"}
-                </h1>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__azxiq)}>
-                <h1
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h1,
-                    projectcss.__wab_text,
-                    sty.h1__hCdG4
-                  )}
-                >
-                  {
-                    "\u0648\u0636\u0639\u0628\u062a \u06a9\u0644\u06cc \u062e\u0648\u0646"
-                  }
-                </h1>
-                <Button
-                  className={classNames("__wab_instance", sty.button__arhMh)}
-                  label={
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__jxNxV
-                      )}
-                    >
-                      {
-                        "\u062b\u0628\u062a \u0622\u0632\u0645\u0627\u06cc\u0634 \u062c\u062f\u06cc\u062f"
-                      }
-                    </div>
-                  }
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["updateShowResults"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["showResults"]
-                            },
-                            operation: 0,
-                            value: false
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateShowResults"] != null &&
-                      typeof $steps["updateShowResults"] === "object" &&
-                      typeof $steps["updateShowResults"].then === "function"
-                    ) {
-                      $steps["updateShowResults"] = await $steps[
-                        "updateShowResults"
-                      ];
-                    }
-                  }}
-                />
-              </div>
-            </div>
-          ) : null}
           {(
             hasVariant(globalVariants, "screen", "mobileOnly")
               ? (() => {
@@ -694,7 +431,11 @@ function PlasmicForm__RenderFunc(props: {
                 })()
               : true
           ) ? (
-            <div className={classNames(projectcss.all, sty.freeBox__l88BM)}>
+            <div
+              data-plasmic-name={"freeBox"}
+              data-plasmic-override={overrides.freeBox}
+              className={classNames(projectcss.all, sty.freeBox)}
+            >
               <h1
                 className={classNames(
                   projectcss.all,
@@ -744,26 +485,13 @@ function PlasmicForm__RenderFunc(props: {
                   onFinish: async values => {
                     const $steps = {};
 
-                    $steps["n8NApi"] = true
+                    $steps["n8Napi"] = true
                       ? (() => {
                           const actionArgs = {
                             args: [
                               "POST",
                               "https://paziresh.app.n8n.cloud/webhook/39b6be6a-ecdf-470b-95f3-f24f36c3621e",
-                              (() => {
-                                try {
-                                  return undefined;
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return undefined;
-                                  }
-                                  throw e;
-                                }
-                              })(),
+                              undefined,
                               (() => {
                                 try {
                                   return $state.form.value;
@@ -787,11 +515,11 @@ function PlasmicForm__RenderFunc(props: {
                         })()
                       : undefined;
                     if (
-                      $steps["n8NApi"] != null &&
-                      typeof $steps["n8NApi"] === "object" &&
-                      typeof $steps["n8NApi"].then === "function"
+                      $steps["n8Napi"] != null &&
+                      typeof $steps["n8Napi"] === "object" &&
+                      typeof $steps["n8Napi"].then === "function"
                     ) {
-                      $steps["n8NApi"] = await $steps["n8NApi"];
+                      $steps["n8Napi"] = await $steps["n8Napi"];
                     }
 
                     $steps["goToRes"] = true
@@ -799,7 +527,7 @@ function PlasmicForm__RenderFunc(props: {
                           const actionArgs = {
                             destination: `/new-page-3?id=${(() => {
                               try {
-                                return $steps.n8NApi.data.id;
+                                return $steps.n8Napi.data.ID;
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
@@ -1996,10 +1724,9 @@ function PlasmicForm__RenderFunc(props: {
                       })()}
                     </FormItemWrapper>
                     <AntdButton
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button__hzVoF
-                      )}
+                      data-plasmic-name={"button"}
+                      data-plasmic-override={overrides.button}
+                      className={classNames("__wab_instance", sty.button)}
                       submitsForm={true}
                       type={"primary"}
                     >
@@ -2029,8 +1756,7 @@ function PlasmicForm__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "glo",
-    "apiRequest",
+    "freeBox",
     "form",
     "input",
     "input2",
@@ -2054,10 +1780,37 @@ const PlasmicDescendants = {
     "input20",
     "input21",
     "input22",
-    "input23"
+    "input23",
+    "button"
   ],
-  glo: ["glo", "apiRequest"],
-  apiRequest: ["apiRequest"],
+  freeBox: [
+    "freeBox",
+    "form",
+    "input",
+    "input2",
+    "input3",
+    "input4",
+    "input5",
+    "input6",
+    "input7",
+    "input8",
+    "input9",
+    "input10",
+    "input11",
+    "input12",
+    "input13",
+    "input14",
+    "input15",
+    "input16",
+    "input17",
+    "input18",
+    "input19",
+    "input20",
+    "input21",
+    "input22",
+    "input23",
+    "button"
+  ],
   form: [
     "form",
     "input",
@@ -2082,7 +1835,8 @@ const PlasmicDescendants = {
     "input20",
     "input21",
     "input22",
-    "input23"
+    "input23",
+    "button"
   ],
   input: ["input"],
   input2: ["input2"],
@@ -2106,15 +1860,15 @@ const PlasmicDescendants = {
   input20: ["input20"],
   input21: ["input21"],
   input22: ["input22"],
-  input23: ["input23"]
+  input23: ["input23"],
+  button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  glo: "div";
-  apiRequest: typeof ApiRequest;
+  freeBox: "div";
   form: typeof FormWrapper;
   input: typeof AntdInput;
   input2: typeof AntdInput;
@@ -2139,6 +1893,7 @@ type NodeDefaultElementType = {
   input21: typeof AntdInput;
   input22: typeof AntdInput;
   input23: typeof AntdInput;
+  button: typeof AntdButton;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2201,8 +1956,7 @@ export const PlasmicForm = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    glo: makeNodeComponent("glo"),
-    apiRequest: makeNodeComponent("apiRequest"),
+    freeBox: makeNodeComponent("freeBox"),
     form: makeNodeComponent("form"),
     input: makeNodeComponent("input"),
     input2: makeNodeComponent("input2"),
@@ -2227,6 +1981,7 @@ export const PlasmicForm = Object.assign(
     input21: makeNodeComponent("input21"),
     input22: makeNodeComponent("input22"),
     input23: makeNodeComponent("input23"),
+    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicForm
     internalVariantProps: PlasmicForm__VariantProps,

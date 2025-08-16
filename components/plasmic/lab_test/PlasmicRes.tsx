@@ -33,7 +33,6 @@ import {
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts,
-  ensureGlobalVariants,
   generateOnMutateForSpec,
   generateStateOnChangeProp,
   generateStateOnChangePropForCodeComponents,
@@ -61,12 +60,12 @@ import {
 
 import Button from "../../Button"; // plasmic-import: wX4cqxiNHL1U/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: alyg4GEueul_/codeComponent
-
-import { useScreenVariants as useScreenVariants_8J7GhLNtJ6O4 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: 8J7ghLNtJ6O4/globalVariant
+import { _useGlobalVariants } from "./plasmic"; // plasmic-import: mDEHsX1J3YSWVvMcFkMkt9/projectModule
+import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: mDEHsX1J3YSWVvMcFkMkt9/styleTokensProvider
+import { _useStyleTokens as useStyleTokens_antd_5_hostless } from ""; // plasmic-import: ohDidvG9XsCeFumugENU3J/styleTokensProvider
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: mDEHsX1J3YSWVvMcFkMkt9/projectcss
 import sty from "./PlasmicRes.module.css"; // plasmic-import: 7RlS78lREQJn/css
 
@@ -174,9 +173,10 @@ function PlasmicRes__RenderFunc(props: {
     $refs
   });
 
-  const globalVariants = ensureGlobalVariants({
-    screen: useScreenVariants_8J7GhLNtJ6O4()
-  });
+  const globalVariants = _useGlobalVariants();
+  const styleTokensClassNames = _useStyleTokens();
+  const styleTokensClassNames_antd_5_hostless =
+    useStyleTokens_antd_5_hostless();
 
   return (
     <React.Fragment>
@@ -199,8 +199,8 @@ function PlasmicRes__RenderFunc(props: {
             projectcss.root_reset,
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
-            projectcss.plasmic_tokens,
-            plasmic_antd_5_hostless_css.plasmic_tokens,
+            styleTokensClassNames,
+            styleTokensClassNames_antd_5_hostless,
             sty.resultPage
           )}
         >

@@ -33,7 +33,6 @@ import {
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts,
-  ensureGlobalVariants,
   generateOnMutateForSpec,
   generateStateOnChangeProp,
   generateStateOnChangePropForCodeComponents,
@@ -60,10 +59,12 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { BaseText } from "@plasmicpkgs/react-aria/skinny/registerText";
+import { _useGlobalVariants } from "./plasmic"; // plasmic-import: mDEHsX1J3YSWVvMcFkMkt9/projectModule
+import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: mDEHsX1J3YSWVvMcFkMkt9/styleTokensProvider
+import { _useStyleTokens as useStyleTokens_antd_5_hostless } from ""; // plasmic-import: ohDidvG9XsCeFumugENU3J/styleTokensProvider
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: mDEHsX1J3YSWVvMcFkMkt9/projectcss
 import sty from "./PlasmicDescription.module.css"; // plasmic-import: YtfkTYddLs9L/css
 
@@ -127,6 +128,10 @@ function PlasmicDescription__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
+  const styleTokensClassNames = _useStyleTokens();
+  const styleTokensClassNames_antd_5_hostless =
+    useStyleTokens_antd_5_hostless();
+
   return (
     <BaseText
       data-plasmic-name={"root"}
@@ -138,8 +143,8 @@ function PlasmicDescription__RenderFunc(props: {
         projectcss.root_reset,
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
-        projectcss.plasmic_tokens,
-        plasmic_antd_5_hostless_css.plasmic_tokens,
+        styleTokensClassNames,
+        styleTokensClassNames_antd_5_hostless,
         sty.root
       )}
       slot={"description"}
