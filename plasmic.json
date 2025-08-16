@@ -849,62 +849,6 @@
           "componentType": "component"
         },
         {
-          "id": "uigk3RmWP41n",
-          "name": "Homepage4",
-          "type": "managed",
-          "projectId": "mDEHsX1J3YSWVvMcFkMkt9",
-          "renderModuleFilePath": "plasmic/lab_test/PlasmicHomepage4.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/new-page-4.tsx"
-          },
-          "cssFilePath": "plasmic/lab_test/PlasmicHomepage4.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/new-page-4"
-        },
-        {
-          "id": "JvkJkd1sW7PX",
-          "name": "Homepage5",
-          "type": "managed",
-          "projectId": "mDEHsX1J3YSWVvMcFkMkt9",
-          "renderModuleFilePath": "plasmic/lab_test/PlasmicHomepage5.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/new-page-5.tsx"
-          },
-          "cssFilePath": "plasmic/lab_test/PlasmicHomepage5.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/new-page-5"
-        },
-        {
-          "id": "hT-7s431ztM_",
-          "name": "Homepage6",
-          "type": "managed",
-          "projectId": "mDEHsX1J3YSWVvMcFkMkt9",
-          "renderModuleFilePath": "plasmic/lab_test/PlasmicHomepage6.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/new-page-6.tsx"
-          },
-          "cssFilePath": "plasmic/lab_test/PlasmicHomepage6.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/new-page-6"
-        },
-        {
-          "id": "k-rqPJBaiKRM",
-          "name": "Homepage7",
-          "type": "managed",
-          "projectId": "mDEHsX1J3YSWVvMcFkMkt9",
-          "renderModuleFilePath": "plasmic/lab_test/PlasmicHomepage7.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/new-page-7.tsx"
-          },
-          "cssFilePath": "plasmic/lab_test/PlasmicHomepage7.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/new-page-7"
-        },
-        {
           "id": "xkbO757stMGy",
           "name": "Form",
           "type": "managed",
